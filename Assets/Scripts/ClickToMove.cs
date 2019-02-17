@@ -20,10 +20,19 @@ public class ClickToMove : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0))
+        
+        if (Input.GetMouseButton(0))
         {
             if(Physics.Raycast(ray, out hit, 100))
             {
+                mNavMeshAgent.destination = hit.point;
+            }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            if (Physics.Raycast(ray, out hit, 100))
+            {
+                transform.position = hit.point;
                 mNavMeshAgent.destination = hit.point;
             }
         }
