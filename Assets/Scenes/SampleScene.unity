@@ -455,6 +455,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1112675423}
   SmoothSpeed: 0.125
+  MinFieldOfView: 20
+  MaxFieldOfView: 60
+  CamZoomMultiplier: 10
   offset: {x: 8, y: 8, z: -8}
 --- !u!1 &656973530
 GameObject:
