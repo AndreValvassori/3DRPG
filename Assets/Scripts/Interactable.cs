@@ -18,25 +18,40 @@ public class Interactable : MonoBehaviour
             if (distance <= radius)
             {
                 hasInteracted = true;
-                Debug.Log("Interact");
+                Interact();
             }
-
         }
     }
 
     public void OnFocused(Transform playerTransform)
     {
+        //Debug.Log("Onfocused");
+        //hasInteracted = true; // Removido. Não interage mais a longa distância.
         isFocus = true;
         Player = playerTransform;
-        hasInteracted = false;
     }
 
     public void OnDefocused()
     {
+        //Debug.Log("OnDefocused");
         isFocus = false;
         Player = null;
         hasInteracted = false;
+        StopInteract();
     }
+
+    public void Interact()
+    {
+        //Ao interagir, o que fazer? Abrir menu, teleportar etc...
+        Debug.Log("Interact");
+    }
+
+    public void StopInteract()
+    {
+        // Aqui, cancelar interação (Esconder menu, etc..)
+        Debug.Log("StopInteract");
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

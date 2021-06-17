@@ -32,8 +32,7 @@ public class CameraFollow : MonoBehaviour
 
         if (d > 0f)
         {
-            Debug.Log("Scroll Up " +d);
-           
+            //Debug.Log("Scroll Up " +d);           
             if (cam.fieldOfView >= MinFieldOfView)
             {
                 cam.fieldOfView = cam.fieldOfView-(d* CamZoomMultiplier);
@@ -41,7 +40,7 @@ public class CameraFollow : MonoBehaviour
         }
         else if (d < 0f)
         {
-            Debug.Log(d);
+            //Debug.Log(d);
             if (cam.fieldOfView <= MaxFieldOfView)
             {
                 cam.fieldOfView = cam.fieldOfView + ((d*-1) * CamZoomMultiplier);
